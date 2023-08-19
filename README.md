@@ -13,7 +13,13 @@ print(gcd_steps(a,b)[1], "are the number of steps ")
 
 
 k= eval(input("Enter the number of digits of whichyou eant GCD which will require maximum steps-"))
+k=0
+l=[]
 for i in range( 10**(k-1), 10**k) :
   for j in range( 10**(k-1), 10**k):
     n= gcd_steps(i,j).[2]
-    
+    if n>k :
+      k=n
+      l.append(i,j)
+  
+print(l[len(l)-1])
